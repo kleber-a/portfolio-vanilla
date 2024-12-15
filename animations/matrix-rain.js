@@ -82,7 +82,7 @@ function animate(timeStamp) {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
         ctx.textAlign = 'center';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#00d7e7' //gradient//'#0aff0a';
+        ctx.fillStyle = '#986dff' //gradient//'#0aff0a';
         ctx.font = effect.fontSize + 'px monospace';
         effect.symbols.forEach(symbol => symbol.draw(ctx));
         timer = 0;
