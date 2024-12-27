@@ -24,6 +24,10 @@ let gradient = ctx.createLinearGradient(0, canvas.height, canvas.width, 0 );
 // gradient.addColorStop(0.8, 'rgb(255, 21, 21)');
 // gradient.addColorStop(1, 'rgb(255, 7, 7)');
 
+
+let lightTheme = false;
+
+
 class Symbol {
     constructor(x, y, fontSize, canvasHeight){
         this.characters = '></@!.,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -79,10 +83,10 @@ function animate(timeStamp) {
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
     if (timer > nextFrame){
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+        ctx.fillStyle = lightTheme ? 'rgba(31, 111, 240, 0.05)' : 'rgba(0, 0, 0, 0.05)'
         ctx.textAlign = 'center';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#986dff' //gradient//'#0aff0a';
+        ctx.fillStyle = lightTheme ? '#FFF' : '#986dff' //gradient//'#0aff0a';
         ctx.font = effect.fontSize + 'px monospace';
         effect.symbols.forEach(symbol => symbol.draw(ctx));
         timer = 0;
@@ -91,6 +95,9 @@ function animate(timeStamp) {
     }
     requestAnimationFrame(animate)
 }
+//
+//#4070f4
+
 
 animate(0);
 
@@ -99,3 +106,10 @@ window.addEventListener('resize', function(){
     canvas.height = this.window.innerHeight;
     effect.resize(canvas.width, canvas.height)
 })
+
+
+function changeThemeMatrix() {
+    lightTheme = !lightTheme;
+    // animate(0);
+
+}

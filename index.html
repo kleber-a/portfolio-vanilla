@@ -1,704 +1,633 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Login Facebook</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme_light.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme_dark.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsividade.css" />
 
-<head>
-  <title>Login Facebook</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Playwrite+ES+Deco+Guides&display=swap"
+      rel="stylesheet"
+    />
 
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<body id="body" class="body">
-  <!--===HEADER===-->
-  <header id="header" class="header">
-    <div class="menu__name">
-      <a href="#" class="nav__logo">Kleber</a>
-    </div>
-    <ul class="menu__list">
-      <li class="menu__item">
-        <a href="#home" class="menu__link active">Home</a>
-        <button class="icon_menu">
-          <i class="bx bxs-home-alt-2"></i>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  </head>
+
+  <body id="body" class="body dark">
+    <!--===HEADER===-->
+    <header id="header" class="header">
+      <div class="menu__name">
+        <a href="#" class="nav__logo">Kleber</a>
+        <button
+          id="theme"
+          class="theme"
+          onclick="changeTheme(); changeThemeMatrix()"
+        >
+          <img id="theme-icon" src="./assets/icons/sun_theme_24.svg" />
         </button>
-      </li>
-      <li class="menu__item">
-        <a href="#about" class="menu__link">Sobre</a>
-        <button class="icon_menu">
-          <i class="bx bx-book"></i>
-        </button>
-      </li>
-      <li class="menu__item">
-        <a href="#skills" class="menu__link">Experiência</a>
-        <button class="icon_menu">
-          <i class="bx bxs-briefcase-alt-2"></i>
-        </button>
-      </li>
-      <li class="menu__item">
-        <a href="#work" class="menu__link">Projetos</a>
-        <button class="icon_menu">
-          <i class="bx bxs-box"></i>
-        </button>
-      </li>
-      <li class="menu__item">
-        <a href="#skills" class="menu__link">Habilidades</a>
-        <button class="icon_menu">
-          <i class="bx bxs-graduation"></i>
-        </button>
-      </li>
-      <li class="menu__item">
-        <a href="#contact" class="menu__link">Contato</a>
-        <button class="icon_menu">
-          <i class="bx bxs-phone"></i>
-        </button>
-      </li>
-    </ul>
-    <!-- <box-icon name='menu'></box-icon> -->
-    <button class="hamburger">
-      <i class="bx bx-menu"></i>
-    </button>
-  </header>
- 
-
-  <main class="main">
-    <div class="main__perfil" id="home">
-
-      <div class="main_name">
-        <div class="name_container">
-          <h2 class="name_text">Olá <img src="./assets/icons/hand.png" />,</h2>
-          <div style="display: flex; gap: 8px;" class="name_text">Sou <h2 class="name_text" style="color: #FEA919">
-              Kleber Andrade</h2>
-          </div>
-          <div class="name_text">Desenvolvedor <u class="name_text line">Front-End.</u></div>
-        </div>
-
-        <div class="avatar">
-          <img src="./my-avatar.png" />
-        </div>
-
       </div>
-      <canvas class="canvas" id="canvas1"></canvas>
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="#home" class="menu__link active">Home</a>
+          <a href="#home" class="icon_menu active_mobile">
+            <i class="bx bxs-home-alt-2"></i>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#about" class="menu__link">Sobre</a>
+          <a href="#about" class="icon_menu">
+            <i class="bx bx-book"></i>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#experience" class="menu__link">Experiência</a>
+          <a href="#experience" class="icon_menu">
+            <i class="bx bxs-briefcase-alt-2"></i>
+          </a>
+          <!-- <button class="icon_menu">
+         
+        </button> -->
+        </li>
+        <li class="menu__item">
+          <a href="#projects" class="menu__link">Projetos</a>
+          <a href="#projects" class="icon_menu">
+            <i class="bx bxs-box"></i>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#skills" class="menu__link">Habilidades</a>
+          <a href="#skills" class="icon_menu">
+            <i class="bx bxs-graduation"></i>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#contact" class="menu__link">Contato</a>
+          <a href="#contact" class="icon_menu">
+            <i class="bx bxs-phone"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- <box-icon name='menu'></box-icon> -->
+      <button class="hamburger disable_menu_mobile">
+        <i class="bx bx-menu"></i>
+      </button>
+    </header>
 
-    </div>
-
-
-    <section id="about" class="main_about">
-
-      <h2 class="main_about_name">
-        < Sobre />
-      </h2>
-
-      <div class="main_about_container">
-        <div class="about">
-          <h3>Meu nome é Kleber Andrade</h3>
-          <p>
-            Sou um desenvolvedor Front-end apaixonado por criar soluções digitais inovadoras. Tenho ampla experiência no
-            desenvolvimento de aplicações web e mobile, com domínio em <b>Angular 2+</b>, <b>React</b>, <b>React
-              Native</b>, <b>HTML5</b>, <b>CSS3</b>,
-            <b>JavaScript</b> e <b>TypeScript</b>.
-            <br>
-            <br>
-            Atuei em projetos de grande impacto nos setores siderúrgico, financeiro e energético, contribuindo para
-            empresas como <a href="https://www2.gerdau.com.br/" target="_blank">Gerdau</a> e <a
-              href="https://www.cemig.com.br/" target="_blank">Cemig</a>. Nesses projetos, desenvolvi soluções web de
-            alto desempenho, otimizando a
-            experiência do usuário e garantindo resultados alinhados às necessidades estratégicas de cada setor.
-            <br>
-            <br>
-            Além das minhas competências em Front-end, também possuo conhecimento em tecnologias complementares como
-            Node.js, Python, MongoDB e MySQL, que ampliam minha capacidade de atuar em projetos Full Stack e colaborar
-            na integração de sistemas.
-            <br>
-            <br>
-            Tenho sólida experiência em metodologias ágeis, especialmente Scrum, e sou proficiente no uso de ferramentas
-            como Azure DevOps, Jira, Trello, GitHub e GitLab. Sempre atento às novidades do mercado, busco aprimorar
-            minhas habilidades e explorar novas tecnologias para entregar soluções robustas e modernas.
-            <br>
-            <br>
-            Pronto para encarar novos desafios, estou motivado a contribuir com projetos inovadores e colaborar em
-            equipes dinâmicas e multidisciplinares.
-          </p>
-        </div>
-        <div class="about">
-
-          <img width="100%" height="100%" alt="Desenvolvido por Freepik" src="./assets/image/laptop.jpg">
-        </div>
-      </div>
-
-    </section>
-
-    <section id="experience" class="main_experience">
-
-      <h2 class="main_experience_name">
-        < Experiência />
-      </h2>
-
-      <div class="main_experience_container">
-
-        <div class="options_experience">
-          <button id="enacom" class="item_options" onclick="experienceOptions('enacom')">Enacom</button>
-          <button id="compass" class="item_options" onclick="experienceOptions('compass')">Compass.Uol</button>
-        </div>
-
-        <div class="text_experience">
-          <div class="text_title">
-            <h4 id="title_experience">Desenvolvedor Front-End</h4>
-            <p id="data_experience">Mar/2023 - Atualmente</p>
-          </div>
-          <h5 id="enterprise_experience">ENACOM</h5>
-          <p id="text_experience">
-            Desenvolvedor Front-End na Enacom, responsável por criar soluções modernas e eficientes utilizando Angular.
-            Atuo em projetos estratégicos para grandes empresas dos setores de siderurgia, financeiro e energia, como
-            Gerdau e Cemig, contribuindo para a transformação digital de seus negócios. Minha atuação inclui o
-            desenvolvimento de uma biblioteca de componentes padronizados, projetada para otimizar e unificar a
-            experiência em projetos internos. Trabalho em um ambiente ágil, aplicando a metodologia Scrum e utilizando
-            Azure DevOps para gestão e integração contínua. Tenho como foco a entrega de interfaces intuitivas,
-            responsivas e de alta performance, alinhadas às melhores práticas de desenvolvimento e às necessidades dos
-            clientes.
-          </p>
-        </div>
-      </div>
-
-    </section>
-
-
-    <section id="projects" class="main_projects">
-      <h2 class="main_projects_name">
-        < PROJETOS />
-      </h2>
-
-      <div class="manun">
-        <h3>Em manuntenção</h3>
-        <img style="width: 40px; height: 40px;" src="./assets/icons/manun.png" />
-      </div>
-
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
+    <main class="main">
+      <section class="main__perfil" id="home">
+        <div class="main_name">
+          <div class="name_container">
+            <h2 class="name_text">
+              Olá <img src="./assets/icons/hand_icon.svg" />,
+            </h2>
+            <div style="display: flex; gap: 8px" class="name_text">
+              Sou
+              <h2 class="name_text name">Kleber Andrade</h2>
             </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
+            <div class="name_text">
+              Desenvolvedor <u class="name_text line">Front-End.</u>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/compass-flix.gif">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/computer-store.PNG">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/poke-dex.jpg">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_text">
-              <p class="title">Title</p>
-              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur praesentium maiores
-                ratione libero quam maxime neque possimus accusamus veniam minima aperiam consequuntur quae magni
-                consectetur labore necessitatibus, officiis laboriosam suscipit?</p>
-            </div>
-            <div class="card_secondary">
-              <div class="area_card_sec">
-                Front-End
-              </div>
-              <div class="name_project_card_sec">
-                System Calling
-              </div>
-              <ul class="list_card_sec">
-                <li>
-                  <a href="https://github.com/kleber-a/calling-system" target="_blank">Repositório</a>
-                </li>
-                <li>
-                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
-                </li>
-              </ul>
-              <div class="status_card_sec">
-                Concluído
-              </div>
-            </div>
+
+          <div class="avatar">
+            <img src="./my-avatar.png" />
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
+        <canvas class="canvas" id="canvas1"></canvas>
+      </section>
 
+      <section id="about" class="main_about">
+        <h2 class="main_about_name">
+          <p class="tag"><</p>
+          Sobre
+          <p class="tag">/></p>
+        </h2>
 
-      <!-- <div class="exemple_project">
-        <div class="center">
-          <div class="card">
-            <div class="card_image">
-              <img src="./assets/projects/calling-system.png">
-            </div>
-            <div class="card_title">
-              Primeiro
-            </div>
-            <div class="card_text">
-              text
-            </div>
+        <div class="main_about_container">
+          <div class="about">
+            <h3>Meu nome é Kleber Andrade</h3>
+            <p>
+              Sou um desenvolvedor Front-end apaixonado por criar soluções
+              digitais inovadoras. Tenho ampla experiência no desenvolvimento de
+              aplicações web e mobile, com domínio em <b>Angular 2+</b>,
+              <b>React</b>, <b>React Native</b>, <b>HTML5</b>, <b>CSS3</b>,
+              <b>JavaScript</b> e <b>TypeScript</b>. Atuei em projetos de grande
+              impacto nos setores siderúrgico, financeiro e energético,
+              contribuindo para empresas como
+              <a href="https://www2.gerdau.com.br/" target="_blank">Gerdau</a> e
+              <a href="https://www.cemig.com.br/" target="_blank">Cemig</a>.
+              Nesses projetos, desenvolvi soluções web de alto desempenho,
+              otimizando a experiência do usuário e garantindo resultados
+              alinhados às necessidades estratégicas de cada setor.
+              <br />
+              <br />
+              Além das minhas competências em Front-end, também possuo
+              conhecimento em tecnologias complementares como Node.js, Python,
+              MongoDB e MySQL, que ampliam minha capacidade de atuar em projetos
+              Full Stack e colaborar na integração de sistemas. Tenho sólida
+              experiência em metodologias ágeis, especialmente Scrum, e sou
+              proficiente no uso de ferramentas como Azure DevOps, Jira, Trello,
+              GitHub e GitLab. Sempre atento às novidades do mercado, busco
+              aprimorar minhas habilidades e explorar novas tecnologias para
+              entregar soluções robustas e modernas.
+              <br />
+              <br />
+              Pronto para encarar novos desafios, estou motivado a contribuir
+              com projetos inovadores e colaborar em equipes dinâmicas e
+              multidisciplinares.
+            </p>
           </div>
-          <div class="card">
-            <div class="card_image">
-              <img src="./assets/projects/compass-flix.gif">
-            </div>
-            <div class="card_title">
-              Segundo
-            </div>
-            <div class="card_text">
-              text
-            </div>
-          </div>
-          <div class="card">
-            <div class="card_image">
-              <img src="./assets/projects/computer-store.PNG">
-            </div>
-            <div class="card_title">
-              Terceiro
-            </div>
-            <div class="card_text">
-              text
-            </div>
-          </div>
-          <div class="card">
-            <div class="card_image">
-              <img src="./assets/projects/poke-dex.jpg">
-            </div>
-            <div class="card_title">
-              Quarto
-            </div>
-            <div class="card_text">
-              text
-            </div>
-          </div>
-          <div class="card">
-            <div class="card_image">
-              <img src="./assets/projects/System.gif">
-            </div>
-            <div class="card_title">
-              Quinto
-            </div>
-            <div class="card_text">
-              text
-            </div>
+          <div class="about">
+            <img
+              width="100%"
+              height="100%"
+              alt="Desenvolvido por Freepik"
+              src="./assets/image/laptop.jpg"
+            />
           </div>
         </div>
-      </div> -->
+      </section>
 
-      <!-- <div class="main_projects_select">
+      <section id="experience" class="main_experience">
+        <h2 class="main_experience_name">
+          <p class="tag"><</p>
+          Experiência
+          <p class="tag">/></p>
+        </h2>
 
-        <button class="button_options" onclick="filter('all')">All</button>
-        <button class="button_options" onclick="filter('angular')">Angular</button>
-        <button class="button_options" onclick="filter('react')">React</button>
-        <button class="button_options" onclick="filter('reactNative')">ReactNative</button>
-        <button class="button_options" onclick="filter('html')">HTML/CSS/JS</button>
+        <div class="main_experience_container">
+          <div class="options_experience">
+            <button
+              id="enacom"
+              class="item_options"
+              onclick="experienceOptions('enacom')"
+            >
+              Enacom
+            </button>
+            <button
+              id="compass"
+              class="item_options"
+              onclick="experienceOptions('compass')"
+            >
+              Compass.Uol
+            </button>
+          </div>
 
-      </div> -->
+          <div class="text_experience">
+            <div class="text_title">
+              <h4 id="title_experience">Desenvolvedor Front-End</h4>
+              <p id="data_experience">Mar/2023 - Atualmente</p>
+            </div>
+            <h5 id="enterprise_experience">ENACOM</h5>
+            <p id="text_experience">
+              Desenvolvedor Front-End na Enacom, responsável por criar soluções
+              modernas e eficientes utilizando Angular. Atuo em projetos
+              estratégicos para grandes empresas dos setores de siderurgia,
+              financeiro e energia, como Gerdau e Cemig, contribuindo para a
+              transformação digital de seus negócios. Minha atuação inclui o
+              desenvolvimento de uma biblioteca de componentes padronizados,
+              projetada para otimizar e unificar a experiência em projetos
+              internos. Trabalho em um ambiente ágil, aplicando a metodologia
+              Scrum e utilizando Azure DevOps para gestão e integração contínua.
+              Tenho como foco a entrega de interfaces intuitivas, responsivas e
+              de alta performance, alinhadas às melhores práticas de
+              desenvolvimento e às necessidades dos clientes.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <!-- <div class="main_projects_container">
+      <section id="projects" class="main_projects">
+        <h2 class="main_projects_name">
+          <p class="tag"><</p>
+          Projetos
+          <p class="tag">/></p>
+        </h2>
 
-        <div id="react" class="card_project calling-system">
-
-          <div class="title_card">Calling-System</div>
+        <div class="manun">
+          <h3>Em manuntenção</h3>
+          <img
+            style="width: 40px; height: 40px"
+            src="./assets/icons/manun.png"
+          />
         </div>
 
-        <div id="reactNative" class="card_project compass-flix">
-       
-          <div class="title_card">Compass Flix</div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card_image">
+                <img src="./assets/projects/calling-system.png" />
+              </div>
+              <div class="card_text">
+                <p class="title">Calling-System</p>
+                <p class="text">
+                  Projeto desenvolido em React para gerenciar solicitações de
+                  chamados de uma empresa. Foi utilizado também o firebase como
+                  o banco de dados.
+                </p>
+              </div>
+              <div class="card_secondary">
+                <div class="area_card_sec">Front-End</div>
+                <div class="name_project_card_sec">System Calling</div>
+                <ul class="list_card_sec">
+                  <li>
+                    <a
+                      href="https://github.com/kleber-a/calling-system"
+                      target="_blank"
+                      >Repositório</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://calling-system-gilt.vercel.app/"
+                      target="_blank"
+                      >Aplicação no ar</a
+                    >
+                  </li>
+                </ul>
+                <div class="status_card_sec">Concluído</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card_image">
+                <img src="./assets/projects/compass-flix.gif" />
+              </div>
+              <div class="card_text">
+                <p class="title">Compass-Flix</p>
+                <p class="text">
+                  O aplicativo compass flix foi feito para consultar os dados
+                  dos seus filmes preferidos. Este projeto foi criado para
+                  aplicação em grupo do programa de estágio na Compass
+                </p>
+              </div>
+              <div class="card_secondary">
+                <div class="area_card_sec">Front-End</div>
+                <div class="name_project_card_sec">Compass-Flix</div>
+                <ul class="list_card_sec">
+                  <li>
+                    <a
+                      href="https://github.com/kleber-a/Compass-Flix"
+                      target="_blank"
+                      >Repositório</a
+                    >
+                  </li>
+                  <!-- <li>
+                  <a href="https://calling-system-gilt.vercel.app/dashboard" target="_blank">Aplicação no ar</a>
+                </li> -->
+                </ul>
+                <div class="status_card_sec">Concluído</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card_image">
+                <img src="./assets/projects/poke-dex.jpg" />
+              </div>
+              <div class="card_text">
+                <p class="title">Pokedex</p>
+                <p class="text">
+                  Uma aplicação que simula uma pokedex onde é possivel procurar
+                  os pokemons pelo nome e acessar suas informações.
+                </p>
+              </div>
+              <div class="card_secondary">
+                <div class="area_card_sec">Front-End</div>
+                <div class="name_project_card_sec">Pokedex</div>
+                <ul class="list_card_sec">
+                  <li>
+                    <a
+                      href="https://github.com/kleber-a/pokedex-angular"
+                      target="_blank"
+                      >Repositório</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://pokedex-angular-eight-delta.vercel.app/"
+                      target="_blank"
+                      >Aplicação no ar</a
+                    >
+                  </li>
+                </ul>
+                <div class="status_card_sec">Concluído</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card_image">
+                <img src="./assets/projects/my_task.png" />
+              </div>
+              <div class="card_text">
+                <p class="title">My Task</p>
+                <p class="text">
+                  Uma aplicação feito em angular para criar tarefas.
+                </p>
+              </div>
+              <div class="card_secondary">
+                <div class="area_card_sec">Front-End</div>
+                <div class="name_project_card_sec">System Calling</div>
+                <ul class="list_card_sec">
+                  <li>
+                    <a
+                      href="https://github.com/kleber-a/app-task"
+                      target="_blank"
+                      >Repositório</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://kleber-a.github.io/app-task/"
+                      target="_blank"
+                      >Aplicação no ar</a
+                    >
+                  </li>
+                </ul>
+                <div class="status_card_sec">Concluído</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card_image">
+                <img src="./assets/projects/computer-store.PNG" />
+              </div>
+              <div class="card_text">
+                <p class="title">Computer Store</p>
+                <p class="text">
+                  Computer-store é um site de uma loja de informática
+                  desenvolvido em angular.
+                </p>
+              </div>
+              <div class="card_secondary">
+                <div class="area_card_sec">Front-End</div>
+                <div class="name_project_card_sec">Computer Store</div>
+                <ul class="list_card_sec">
+                  <li>
+                    <a
+                      href="https://github.com/kleber-a/computer-store"
+                      target="_blank"
+                      >Repositório</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://kleber-a.github.io/computer-store/produtos"
+                      target="_blank"
+                      >Aplicação no ar</a
+                    >
+                  </li>
+                </ul>
+                <div class="status_card_sec">Concluído</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+      </section>
 
-        <div id="angular" class="card_project computer-store">
-          <div class="title_card">Computer Store</div>
-        </div>
-
-
-      </div> -->
-
-    </section>
-
-    <!--  <div id="skills" class="main_skills">
-
+      <section id="skills" class="main_skills">
         <h2 class="main_skills_name">
-          < HABILIDADES />
+          <p class="tag"><</p>
+          Habilidades
+          <p class="tag">/></p>
         </h2>
 
         <div class="main_skills_container">
-
           <div class="main_skills_item">
-
             <p>Tecnologia com a qual trabalhei e me envolvi :</p>
 
             <div class="item_language">
               <div class="language">
-                <img src="./assets/icons/angular.png" />
-                <p class="text">Angular</p>
+                <div class="language_box">
+                  <img src="./assets/icons/angular.png" />
+                  <p class="text">Angular</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/react.svg" />
-                <p class="text">React</p>
+                <div class="language_box">
+                  <img src="./assets/icons/react.svg" />
+                  <p class="text">React</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/react.svg" />
-                <p class="text">React Native</p>
+                <div class="language_box">
+                  <img src="./assets/icons/react.svg" />
+                  <p class="text">React Native</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/js.svg" />
-                <p class="text">JavaScript</p>
+                <div class="language_box">
+                  <img src="./assets/icons/js.svg" />
+                  <p class="text">JavaScript</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/typescript.svg" />
-                <p class="text">TypeScript</p>
+                <div class="language_box">
+                  <img src="./assets/icons/typescript.svg" />
+                  <p class="text">TypeScript</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/java.svg" />
-                <p class="text">Java</p>
+                <div class="language_box">
+                  <img src="./assets/icons/java.svg" />
+                  <p class="text">Java</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/python.svg" />
-                <p class="text">Python</p>
+                <div class="language_box">
+                  <img src="./assets/icons/python.svg" />
+                  <p class="text">Python</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/mysql.png" />
-                <p class="text">MySQL</p>
+                <div class="language_box">
+                  <img src="./assets/icons/mysql.png" />
+                  <p class="text">MySQL</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/html.svg" />
-                <p class="text">HTML5</p>
+                <div class="language_box">
+                  <img src="./assets/icons/html.svg" />
+                  <p class="text">HTML5</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/css.svg" />
-                <p class="text">CSS3</p>
+                <div class="language_box">
+                  <img src="./assets/icons/css.svg" />
+                  <p class="text">CSS3</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/sass.svg" />
-                <p class="text">Sass</p>
+                <div class="language_box">
+                  <img src="./assets/icons/sass.svg" />
+                  <p class="text">Sass</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/nodejs.svg" />
-                <p class="text">Node.js</p>
+                <div class="language_box">
+                  <img src="./assets/icons/nodejs.svg" />
+                  <p class="text">Node.js</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/git.svg" />
-                <p class="text">Git</p>
+                <div class="language_box">
+                  <img src="./assets/icons/git.svg" />
+                  <p class="text">Git</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/github.svg" />
-                <p class="text">GitHub</p>
+                <div class="language_box">
+                  <img src="./assets/icons/github.svg" />
+                  <p class="text">GitHub</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/gitlab.svg" />
-                <p class="text">GitLab</p>
+                <div class="language_box">
+                  <img src="./assets/icons/gitlab.svg" />
+                  <p class="text">GitLab</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/jira.svg" />
-                <p class="text">Jira</p>
+                <div class="language_box">
+                  <img src="./assets/icons/jira.svg" />
+                  <p class="text">Jira</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/azure-devops.png" />
-                <p class="text">Azure Devops</p>
+                <div class="language_box">
+                  <img src="./assets/icons/azure-devops.png" />
+                  <p class="text">Azure Devops</p>
+                </div>
               </div>
               <div class="language">
-                <img src="./assets/icons/firebase.svg" />
-                <p class="text">Firebase</p>
+                <div class="language_box">
+                  <img src="./assets/icons/firebase.svg" />
+                  <p class="text">Firebase</p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="main_skills_item">
-            <p>Conjunto de habilidades principais:</p>
-            <div class="chartjs">
-              <canvas id="myChart" style="width: 400px; height: 400px;"></canvas>
-            </div>
-
-          </div>
-
         </div>
-      </div>
+      </section>
 
-      <div id="contact" class="main_contact">
-
+      <section id="contact" class="main_contact">
         <h2 class="main_contact_name">
-          < Contato />
+          <p class="tag"><</p>
+          Contato
+          <p class="tag">/></p>
         </h2>
+        <div class="main_contact_container">
+          <form
+            class="form_contact"
+            action="https://getform.io/f/pagxnjob"
+            method="POST"
+          >
+            <div class="title_form">Entre em contato</div>
+            <input
+              id="name"
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Nome"
+            />
+            <input
+              id="email"
+              class="input"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+            <textarea
+              id="message"
+              class="textarea"
+              name="message"
+              rows="5"
+              placeholder="Mensagem"
+            ></textarea>
 
-        <form class="form_contact" action="https://getform.io/f/pagxnjob" method="POST">
-          <input id="name" class="input" type="text" name="name" placeholder="Nome">
-          <input id="email" class="input" type="email" name="email" placeholder="Email">
-          <textarea id="message" class="textarea" name="message" rows="5" placeholder="Mensagem"></textarea>
+            <div class="buttons">
+              <button id="enviar" type="submit" disabled="true">Enviar</button>
+              <button id="limpar" type="reset" disabled="true">Limpar</button>
+            </div>
+          </form>
 
-          <div style="display: flex; gap: 10px;">
-            <button id="enviar" type="submit" disabled="true">Enviar</button>
-            <button id="limpar" type="reset" disabled="true">Limpar</button>
+          <div class="info_contact">
+            <div class="box_info">
+              <h3>E-mail para contato</h3>
+              <p>kleberandrade1998@hotmail.com</p>
+            </div>
+            <div class="box_info">
+              <h3>Minhas redes</h3>
+              <div class="links_info">
+                <a
+                  href="https://www.linkedin.com/in/kleber-andrade/"
+                  target="_blank"
+                  class="footer__icon"
+                  ><i class="bx bxl-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/kleber-a"
+                  target="_blank"
+                  class="footer__icon"
+                  ><i class="bx bxl-github"></i
+                ></a>
+              </div>
+            </div>
           </div>
-    
+        </div>
+      </section>
+    </main>
+    <div class="clear"></div>
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+      <p class="footer__title">
+        Copyright © 2024 /
+        <a href="https://github.com/kleber-a" target="_blank">Kleber Andrade</a>
+        / Todos os direitos reservados.
+      </p>
+    </footer>
 
-        </form>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
-      </div>-->
-  </main>
-  <div class="clear"></div>
-  <!--===== FOOTER =====-->
-  <!-- <footer class="footer">
-    <p class="footer__title">Kleber Andrade</p>
-    <div class="footer__social" id="contact">
-      <a href="https://www.linkedin.com/in/kleber-andrade/" target="_blank" class="footer__icon"><i
-          class="bx bxl-linkedin"></i></a>
-      <a href="https://github.com/kleber-a" target="_blank" class="footer__icon"><i class="bx bxl-github"></i></a>
-    </div>
-  </footer> -->
+    <script src="./js/matrix-rain.js"></script>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="animations/matrix-rain.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
 
-  <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-  <script src="./carrossel/carrossel.js"></script>
-  <script src="./js/main.js"></script>
-
-</body>
-
+    <script src="./js/carrossel.js"></script>
+    <script src="./js/scrollReveal.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

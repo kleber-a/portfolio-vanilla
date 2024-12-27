@@ -25,16 +25,3 @@ const swiper = new Swiper(".mySwiper", {
     },
   });
 
-  swiper.autoplay.stop();
-  swiper.update();
-
-// swiper.el.addEventListener('mouseenter', () => {
-//     swiper.autoplay.stop();
-//     swiper.update();
-//   });
-  
-//   swiper.el.addEventListener('mouseleave', () => {
-//     swiper.autoplay.start();
-//     swiper.update();
-//   });
-
